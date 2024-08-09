@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Deck {
 
+    // list of cards
     private List<Card> cards;
 
 
@@ -51,6 +52,15 @@ public class Deck {
         for (Card card : hand) {
             System.out.println(card);
         }
+    }
+
+    public boolean isEmpty() {
+        return cards.isEmpty();
+    }
+
+    // getter for the cards list
+    public List<Card> getCards() {
+        return new ArrayList<>(cards);
     }
 
 }
