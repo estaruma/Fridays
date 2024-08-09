@@ -1,31 +1,25 @@
 public class Main {
     public static void main(String[] args) {
-        Book book1 = new Book("Book 1 ", 8.0);
-        Book book2 = new Book("Book 2 ", 8.0);
-        Book book3 = new Book("Book 3 ", 8.0);
-        Book book4 = new Book("Book 4 ", 8.0);
-        Book book5 = new Book("Book 5 ", 8.0);
+        Discount discount = new Discount();
 
+        Basket basket = new Basket(discount);
 
-        BookSeries bookSeries = new BookSeries();
-        bookSeries.addBook(book1);
-        bookSeries.addBook(book2);
-        bookSeries.addBook(book3);
-        bookSeries.addBook(book4);
-        bookSeries.addBook(book5);
+        Book book1 = new Book("Harry Potter 1 ", 8.0);
+        Book book2 = new Book("Harry Potter 2 ", 8.0);
+        Book book3 = new Book("Harry Potter 3 ", 8.0);
 
-        Discount discount = new Discount(0, 0);
+        // create shopping bags for each book
+        ShoppingBag bag1 = new ShoppingBag(book1, 1);
+        ShoppingBag bag2 = new ShoppingBag(book2, 2);
+        ShoppingBag bag3 = new ShoppingBag(book3, 1);
 
-        Basket basket = new Basket(bookSeries, discount);
+        // add to basket
 
-        basket.addItem(new ShoppingBag(book1, 1));
-        basket.addItem(new ShoppingBag(book2, 1));
-        basket.addItem(new ShoppingBag(book3, 1));
-        basket.addItem(new ShoppingBag(book4, 1));
-        basket.addItem(new ShoppingBag(book5, 1));
+        basket.addItem(bag1);
+        basket.addItem(bag2);
+        basket.addItem(bag3);
+
 
         System.out.println(basket);
-
-
     }
 }

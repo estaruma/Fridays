@@ -14,17 +14,10 @@ public class ShoppingBag {
 
     }
 
-    public void setBook() {
-        this.book = book;
-    }
-
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity() {
-        this.quantity = quantity;
-    }
 
     public double getTotalPrice() {
         return book.getPrice() * quantity;
